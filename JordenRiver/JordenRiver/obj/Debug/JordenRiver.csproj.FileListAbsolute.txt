@@ -1,0 +1,2 @@
+c:\users\user 1\documents\visual studio 2015\Projects\JordenRiver\JordenRiver\bin\Debug\JordenRiver.exe.config
+c:\users\user 1\documents\visual studio 2015\Projects\JordenRiver\JordenRiver\obj\Debug\JordenRiver.csprojResolveAssemblyReference.cache
