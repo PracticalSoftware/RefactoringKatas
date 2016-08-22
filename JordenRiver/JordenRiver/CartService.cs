@@ -11,7 +11,8 @@ namespace JordanRiver
             Cart cart;
 
             //Fetch the cart details from a json file.
-            using (FileStream fs = File.Open(@"c:\cart" + cartId + ".json", FileMode.Open))
+            var path = @"c:\cart" + cartId + ".json";
+            using (FileStream fs = File.Open(path, FileMode.Open))
             {
                 using (StreamReader sr = new StreamReader(fs))
                 using (JsonReader jr = new JsonTextReader(sr))
@@ -25,7 +26,7 @@ namespace JordanRiver
             cart.Items.Add(item);
 
             //Store again the update cart in the json file.
-            using (FileStream fs = File.Open(@"c:\cart" + cartId + ".json", FileMode.Open))
+            using (FileStream fs = File.Open(path, FileMode.Open))
             {
                 using (StreamWriter sw = new StreamWriter(fs))
                 using (JsonWriter jw = new JsonTextWriter(sw))
