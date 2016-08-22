@@ -12,6 +12,18 @@ namespace JordanRiver
 
             //Fetch the cart details from a json file.
             var path = @"c:\cart" + cartId + ".json";
+            cart = Open(path);
+
+            //Add the item to the cart
+            cart.Items.Add(item);
+
+            //Store again the update cart in the json file.
+            Save(path, cart);
+        }
+
+        public Cart Open(string path)
+        {
+            Cart cart;
             using (FileStream fs = File.Open(path, FileMode.Open))
             {
                 using (StreamReader sr = new StreamReader(fs))
@@ -21,11 +33,11 @@ namespace JordanRiver
                     cart = serializer.Deserialize<Cart>(jr);
                 }
             }
+            return cart;
+        }
 
-            //Add the item to the cart
-            cart.Items.Add(item);
-
-            //Store again the update cart in the json file.
+        public void Save(string path, Cart cart)
+        {
             using (FileStream fs = File.Open(path, FileMode.Open))
             {
                 using (StreamWriter sw = new StreamWriter(fs))
