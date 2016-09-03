@@ -19,7 +19,7 @@ public class Trader {
 		List<Stock> stocks = _stocksRepository.getAllStocks();
 		for (Stock stock : stocks) {
 			if(stock.shouldBeSold()){
-				_stocksMarketApi.sell(stock);
+				((StocksMarketApi) _stocksMarketApi).sell(stock);
 			}
 		}
 	}
