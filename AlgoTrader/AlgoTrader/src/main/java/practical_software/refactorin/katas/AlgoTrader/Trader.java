@@ -18,7 +18,7 @@ public class Trader {
             if (stock.shouldBeSold()) {
                 _stocksRepository.delete(stock);
 
-                ((StocksMarketApi) _stocksMarketApi).sendSellCommand(stock);
+                _stocksMarketApi.sendSellCommand(stock);
             }
         }
     }
