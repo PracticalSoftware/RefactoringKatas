@@ -6,4 +6,5 @@ public interface IStocksRepoistory {
 
 	List<Stock> getAllStocks();
 
+	void delete(Stock stock) throws Exception;
 }
